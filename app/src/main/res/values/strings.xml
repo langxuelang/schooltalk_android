@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">名校讲座</string>
+    <string name="title_home">讲座</string>
+    <string name="title_school">学校</string>
+    <string name="title_record">讲座录音</string>
+    <string name="title_my">我的</string>
+</resources>
