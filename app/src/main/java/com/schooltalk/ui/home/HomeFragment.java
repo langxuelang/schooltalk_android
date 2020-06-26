@@ -11,14 +11,17 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.schooltalk.R;
 import com.schooltalk.databinding.FragmentHomeBinding;
+import com.schooltalk.model.HomeLectureListModel;
 
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
     FragmentHomeBinding mFragmentHomeBinding;
+    HomeListAdapter mHomeListAdapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -28,10 +31,14 @@ public class HomeFragment extends Fragment {
 
         View root = mFragmentHomeBinding.getRoot();
 
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        mHomeListAdapter = new HomeListAdapter();
+        mFragmentHomeBinding.list.setAdapter(mHomeListAdapter);
+        mFragmentHomeBinding.list.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        homeViewModel.getHomeList().observe(getViewLifecycleOwner(), new Observer<HomeLectureListModel>() {
             @Override
-            public void onChanged(@Nullable String s) {
-                mFragmentHomeBinding.textHome.setText(s);
+            public void onChanged(HomeLectureListModel homeLectureListModel) {
+                mHomeListAdapter.submitList(homeLectureListModel.getGoodsList());
             }
         });
         return root;

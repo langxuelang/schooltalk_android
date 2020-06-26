@@ -12,7 +12,7 @@ import java.util.List;
 public class HomeViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
-    private MutableLiveData<List<HomeLectureListModel>> mHomeList;
+    private MutableLiveData<HomeLectureListModel> mHomeList;
 
     private HomeListRepository mHomeListRepository;
 
@@ -20,10 +20,14 @@ public class HomeViewModel extends ViewModel {
         mText = new MutableLiveData<>();
         mText.setValue("This is home fragment");
         mHomeListRepository = new HomeListRepository();
-        mHomeListRepository.loadHomeList();
+        mHomeList = mHomeListRepository.loadHomeList();
     }
 
     public LiveData<String> getText() {
         return mText;
+    }
+
+    public MutableLiveData<HomeLectureListModel> getHomeList() {
+        return mHomeList;
     }
 }
