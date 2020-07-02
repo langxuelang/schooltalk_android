@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.schooltalk.R;
 import com.schooltalk.databinding.FragmentHomeBinding;
 import com.schooltalk.model.HomeLectureListModel;
+import com.schooltalk.model.HomeLectureListQueryModel;
 
 public class HomeFragment extends Fragment {
 
@@ -34,6 +35,8 @@ public class HomeFragment extends Fragment {
         mHomeListAdapter = new HomeListAdapter();
         mFragmentHomeBinding.list.setAdapter(mHomeListAdapter);
         mFragmentHomeBinding.list.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        homeViewModel.setQuery(new HomeLectureListQueryModel());
 
         homeViewModel.getHomeList().observe(getViewLifecycleOwner(), new Observer<HomeLectureListModel>() {
             @Override

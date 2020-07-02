@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData;
 import com.schooltalk.api.HomeListService;
 import com.schooltalk.model.DataResponse;
 import com.schooltalk.model.HomeLectureListModel;
+import com.schooltalk.model.HomeLectureListQueryModel;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -28,7 +29,7 @@ public class HomeListRepository {
     }
 
 
-    public MutableLiveData<HomeLectureListModel> loadHomeList(){
+    public MutableLiveData<HomeLectureListModel> loadHomeList(HomeLectureListQueryModel queryModel){
 
        final MutableLiveData<HomeLectureListModel> liveData = new MutableLiveData<>();
 
