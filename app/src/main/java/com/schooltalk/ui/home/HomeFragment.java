@@ -41,7 +41,9 @@ public class HomeFragment extends Fragment {
         homeViewModel.getHomeList().observe(getViewLifecycleOwner(), new Observer<HomeLectureListModel>() {
             @Override
             public void onChanged(HomeLectureListModel homeLectureListModel) {
-                mHomeListAdapter.submitList(homeLectureListModel.getGoodsList());
+                if(homeLectureListModel != null){
+                    mHomeListAdapter.submitList(homeLectureListModel.getGoodsList());
+                }
             }
         });
         return root;
