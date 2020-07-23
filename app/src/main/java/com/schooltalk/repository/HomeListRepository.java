@@ -9,6 +9,8 @@ import com.schooltalk.model.DataResponse;
 import com.schooltalk.model.HomeLectureListModel;
 import com.schooltalk.model.HomeLectureListQueryModel;
 
+import javax.inject.Inject;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -21,6 +23,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class HomeListRepository {
     private static final String TAG = "HomeListRepository";
     Retrofit retrofit;
+    @Inject
     public HomeListRepository(){
         retrofit = new Retrofit.Builder()
                 .baseUrl("https://school.gaotenglife.com")
