@@ -14,6 +14,6 @@ import dagger.Component;
 @Component(modules = {NetworkModule.class,SubcomponentsModule.class})
 public interface ApplicationComponent {
     //void inject(MainActivity mainActivity);
-    LoginViewModel getViewModle();
+    //LoginViewModel getViewModle();
     LoginComponent.Factory loginComponent();
 }
