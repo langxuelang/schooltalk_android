@@ -30,6 +30,7 @@ public class DashboardFragment extends Fragment {
                 textView.setText(s);
             }
         });
+        dashboardViewModel.loadDetail();
         return root;
     }
 }

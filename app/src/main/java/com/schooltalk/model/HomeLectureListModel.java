@@ -218,5 +218,32 @@ public class HomeLectureListModel {
         public void setLecture_audio(Object lecture_audio) {
             this.lecture_audio = lecture_audio;
         }
+
+        @Override
+        public String toString() {
+            return "LectureInfoModel{" +
+                    "lecture_id='" + lecture_id + '\'' +
+                    ", cat_id='" + cat_id + '\'' +
+                    ", lecture_name='" + lecture_name + '\'' +
+                    ", lecture_person='" + lecture_person + '\'' +
+                    ", lecture_desc='" + lecture_desc + '\'' +
+                    ", lecture_img='" + lecture_img + '\'' +
+                    ", lecture_tags='" + lecture_tags + '\'' +
+                    ", is_series='" + is_series + '\'' +
+                    ", lecture_series_name='" + lecture_series_name + '\'' +
+                    ", add_time='" + add_time + '\'' +
+                    ", last_update='" + last_update + '\'' +
+                    ", lecture_person_intro='" + lecture_person_intro + '\'' +
+                    ", province_id='" + province_id + '\'' +
+                    ", school_id='" + school_id + '\'' +
+                    ", province_name='" + province_name + '\'' +
+                    ", school_name='" + school_name + '\'' +
+                    ", lecture_starttime='" + lecture_starttime + '\'' +
+                    ", lecture_endtime='" + lecture_endtime + '\'' +
+                    ", lecture_location='" + lecture_location + '\'' +
+                    ", lecture_enroolurl='" + lecture_enroolurl + '\'' +
+                    ", lecture_audio=" + lecture_audio +
+                    '}';
+        }
     }
 }
