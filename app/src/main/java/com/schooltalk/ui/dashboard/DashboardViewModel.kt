@@ -15,7 +15,7 @@ class DashboardViewModel : ViewModel() {
         get() = mText
 
     fun loadDetail(){
-        viewModelScope.launch(){
+        viewModelScope.launch {
             mText.value = mDetailRepository.getLectureDetail()?.body()?.data?.weekhotList?.toString()
         }
     }

@@ -20,7 +20,6 @@ class LectureDetailRepository {
 
         val call = lectureDetailService?.getLectureDetail(0, 15)
         return withContext(Dispatchers.IO){
-
             call?.execute()
         }
     }
